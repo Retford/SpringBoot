@@ -1,7 +1,7 @@
-package com.example.segundoProyecto.consumidorControl.services;
+package com.example.segundoProyecto.agregarCRUD.services;
 
-import com.example.segundoProyecto.consumidorControl.dao.IndividuoDao;
-import com.example.segundoProyecto.consumidorControl.domain.Individuo;
+import com.example.segundoProyecto.agregarCRUD.dao.IndividuoDao;
+import com.example.segundoProyecto.agregarCRUD.domain.Individuo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
