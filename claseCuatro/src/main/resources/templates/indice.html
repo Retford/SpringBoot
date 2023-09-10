@@ -2,30 +2,35 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>CRUD Spring</title>
 </head>
 <body>
-<h1>Hola Mundo :3</h1>
+<header th:replace="Plantillas/plantilla :: encabezado"></header>
 <a th:href="@{/anexar}">Alta Individuo</a>
 <br>
 <div th:if="${individuos != null and !individuos.empty}">
     <table border="2">
         <tr>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Edad</th>
-            <th>Correo</th>
-            <th>Teléfono</th>
+            <th th:text="#{layout.nombre}"></th>
+            <th th:text="#{layout.apellido}"></th>
+            <th>[[#{layout.edad}]]</th>
+            <th>[[#{layout.correo}]]</th>
+            <th th:text="#{layout.telefono}"></th>
+            <th th:text="#{button.cambiar}"></th>
+            <th>[[#{button.borrar}]]</th>
         </tr>
         <tr th:each="individuo: ${individuos}">
             <td th:text="${individuo.nombre}">Muestra Nombre</td>
             <td th:text="${individuo.apellido}">Muestra Apellido</td>
             <td th:text="${individuo.edad}">Muestra Edad</td>
             <td th:text="${individuo.correo}">Muestra Correo</td>
-            <td th:text="${individuo.telefono}">Muestra Teléfono</td>
+            <td th:text="${individuo.telefono}">Muestra Teléfono
+            <td> <a th:href="@{/cambiar/} + ${individuo.id_individuo}" th:text="#{button.cambiar}"></a></td>
+            <td> <a th:href="@{/borrar(id_individuo = ${individuo.id_individuo})}" th:text="#{button.borrar}"></a></td>
         </tr>
     </table>
 </div>
 <div th:if="${individuos == null or individuos.empty}">La lista no tiene información</div>
+<footer th:replace="Plantillas/plantilla :: footer"></footer>
 </body>
 </html>

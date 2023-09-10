@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PlantillaTh</title>
+</head>
+<body>
+    <header th:fragment="encabezado">
+        <h1 th:text="#{layout.titulo}">Control Consumidor</h1>
+    </header>
+<footer th:fragment="footer">
+    <div>
+        <br>
+        <a th:href="@{/(lang=es)}">ES</a> -
+        <a th:href="@{/(lang=en)}">EN</a> -
+        <a th:href="@{/(lang=ro)}">RO</a> -
+        <span> [[#{layout.footer}]] </span>
+
+    </div>
+
+</footer>
+
+</body>
+</html>
